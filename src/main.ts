@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import './service/request'
+import pzRequest from './service'
 
 import router from './router'
 import store from './store'
@@ -14,3 +14,8 @@ app.use(router)
 app.use(store)
 app.use(ElementPlus)
 app.mount('#app')
+
+pzRequest.request({
+  url: '/home/multidata',
+  method: 'GET'
+})
